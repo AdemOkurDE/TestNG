@@ -13,6 +13,7 @@ public class C03_ConfigReader {
         System.out.println(ConfigReader.getProperty("wiseurl"));
         // key yanlis yazilirsa, ConfigReader'daki properties objesi
         // yanlis yazilan key'i bulamaz ve null doner
+        System.out.println(ConfigReader.getProperty("wiseUrl"));
 
         System.out.println(ConfigReader.getProperty("kullaniciAdiAhmet")); // rahmet
 

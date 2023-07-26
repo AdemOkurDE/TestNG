@@ -20,7 +20,7 @@ public class FacebookPage {
     @FindBy(xpath = "//*[@name='login']")
     public WebElement girisYapButonu;
 
-    @FindBy(xpath = "//*[@title='Decline optional cookies']")
+    @FindBy(xpath = "(//button[@type='submit'])[2]")
     public WebElement cookiesButton;
 
     @FindBy(xpath = "//*[@class='_9ay7']")
