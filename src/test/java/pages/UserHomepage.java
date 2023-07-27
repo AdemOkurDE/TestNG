@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class UserHomepage {
-    UserHomepage(){
+    public UserHomepage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -397,6 +397,26 @@ public class UserHomepage {
     //Ziyaretci Home page sayfasi contact butonu icinde harita adresi
     @FindBy(xpath="//div[@class='place-desc-large']")
     public WebElement haritaAdresYazi;
+
+    //IN SIGN UP PAGE
+
+    //SIGN IN PAGE
+    @FindBy(xpath="//input[@id='email']")
+    public WebElement usernameTextbox;
+
+    @FindBy(xpath="//input[@id='password']")
+    public WebElement passwordTextbox;
+
+    @FindBy(xpath="(//button[@type='submit'])[1]")
+    public WebElement loginButonu;
+
+    @FindBy(xpath="//*[@id='navigation']/div[2]/ul[2]/li[2]/a/span")
+    public WebElement basariliGirisKontrolElementi;
+
+    @FindBy(xpath="//button[@class='js-cookie-consent-agree cookie-consent__agree']")
+    public WebElement cookiesAllowButton;
+
+    //IN ADD PROPERTY PAGE
 
 
 }

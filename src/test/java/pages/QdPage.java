@@ -11,6 +11,9 @@ public class QdPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+    @FindBy(xpath = "//a[@onclick='cookieAccept();']")
+    public WebElement cookieAccept;
+
     @FindBy(xpath = "//a[text()='Log in']")
     public WebElement ilkLoginLinki;
 
