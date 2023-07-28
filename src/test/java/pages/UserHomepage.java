@@ -416,6 +416,38 @@ public class UserHomepage {
     @FindBy(xpath="//button[@class='js-cookie-consent-agree cookie-consent__agree']")
     public WebElement cookiesAllowButton;
 
+    // User Homepage Footer Contact Info Field
+    @FindBy(xpath="(//*[@class='footer-widget'])[1]")
+    public WebElement footerContactInfo;
+
+    // User Homepage Footer Copyright Info Field
+     @FindBy(xpath="//p[@class='mb-0']")
+     public WebElement copyrightInFooter;
+
+    // User Homepage Footer Facebook link
+     @FindBy(xpath="//i[@class='ti-facebook']")
+     public WebElement linkFacebookInFooter;
+
+    // User Homepage Footer Twitter link
+     @FindBy(xpath="//i[@class='ti-twitter']")
+     public WebElement linkTwitterInFooter;
+
+    // User Homepage Footer Instagram link
+     @FindBy(xpath="//i[@class='ti-instagram']")
+     public WebElement linkInstagramInFooter;
+
+    // User Homepage Footer LinkedIn link
+     @FindBy(xpath="//i[@class='ti-linkedin']")
+     public WebElement linkLinkedInInFooter;
+
+    // User Homepage Footer Pinterest link
+     @FindBy(xpath="//i[@class='ti-pinterest']")
+     public WebElement linkPinterestInFooter;
+
+    // User Homepage Footer Subscribe button
+    @FindBy(xpath="//*[@class='btn bg-dark text-white']")
+    public WebElement buttonSubscribeInFooter;
+
     //IN ADD PROPERTY PAGE
 
 

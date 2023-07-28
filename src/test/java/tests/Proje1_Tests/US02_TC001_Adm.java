@@ -10,9 +10,16 @@ import utilities.ReusableMethods;
 public class US02_TC001_Adm {
 
     @Test
-    public void visitorAnasayfaHeaderAlaniTesti(){
+    public void visitorHomepageHeaderMenuVerifyTest(){
+
+        //go to qa.hauseheaven.com page
+
         Driver.getDriver().get(ConfigReader.getProperty("userUrl"));
         UserHomepage visitorPage= new UserHomepage();
+
+        //Located in the header section;
+        //Home, Listing, Projects, Agents, Blog, Contact, Sign Up menus are "visible".
+        //Home, Listing, Projects, Agents, Blog, Contact, Sign Up menus are "active".
 
         Assert.assertTrue(visitorPage.logoHome.isDisplayed());
         Assert.assertTrue(visitorPage.logoHome.isEnabled());
@@ -47,11 +54,9 @@ public class US02_TC001_Adm {
         Assert.assertTrue(visitorPage.linkWishlist.isDisplayed());
         Assert.assertTrue(visitorPage.linkWishlist.isEnabled());
 
+        //The page is closed
+        Driver.closeDriver();
 
-        visitorPage.linkMenuHome.click();
-
-        ReusableMethods.bekle(1);
-    Driver.closeDriver();
     }
 
 }

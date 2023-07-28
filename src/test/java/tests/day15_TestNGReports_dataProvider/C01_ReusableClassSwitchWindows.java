@@ -26,8 +26,7 @@ public class C01_ReusableClassSwitchWindows {
         Assert.assertEquals(actualTitle,expectedTitle);
 
         // sayfalari kapatin
+
         Driver.quitDriver();
-
-
     }
 }
