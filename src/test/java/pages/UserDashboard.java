@@ -7,7 +7,7 @@ import utilities.Driver;
 
 public class UserDashboard {
     //-Elif - -Suleyman
-    UserDashboard(){
+    public UserDashboard(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 

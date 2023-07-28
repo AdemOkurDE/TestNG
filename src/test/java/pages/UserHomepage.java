@@ -264,6 +264,7 @@ public class UserHomepage {
 
     //Agents linkine tiklayinca cikan ilk emlakci(Agent) linki
     @FindBy(xpath="(//h5[@class='fr-can-name'])[1]")
+    //@FindBy(xpath="(//div[@class='fr-grid-thumb'])[1]")
     public WebElement linkFirstAgent;
 
     //Agents linkine tiklayinca cikan ilk emlakci(Agent) mulk sayisi texti
@@ -278,8 +279,11 @@ public class UserHomepage {
     @FindBy(xpath="(//a[@class='prt-view'])[1]")
     public WebElement buttonFirstAgentDetail;
 
+
+
     //Agents sayfada ilk emlakci detaylarindaki satilik ilanlar linki
-    @FindBy(xpath="//a[@class='nav-link active ']")
+    //@FindBy(xpath="//a[@class='nav-link active ']")
+    @FindBy(xpath="//a[@id='tab-type-1']")
     public WebElement linkFirstAgentForSale;
 
     //Agents sayfada ilk emlakci detaylarindaki satilik ilanlarin ilkinin detay görüntüleme linki
@@ -287,7 +291,8 @@ public class UserHomepage {
     public WebElement linkFirstAgentForSaleFirstProperty;
 
     //Agents sayfada ilk emlakci detaylarindaki kiralik ilanlar linki
-    @FindBy(xpath="(//a[@class='nav-link '])[1]")
+    //@FindBy(xpath="(//a[@class='nav-link '])[1]")
+    @FindBy(xpath="//a[@id='tab-type-2']")
     public WebElement linkFirstAgentForRent;
 
     //Agents sayfada ilk emlakci detaylarindaki kiralik ilanlarin ilkinin detay görüntüleme linki
@@ -447,6 +452,11 @@ public class UserHomepage {
     // User Homepage Footer Subscribe button
     @FindBy(xpath="//*[@class='btn bg-dark text-white']")
     public WebElement buttonSubscribeInFooter;
+
+
+    //Agents sayfada ilk emlakci detaylarindaki header
+    @FindBy(xpath="//div[@class='block-wrap']")
+    public WebElement headerFirstAgentDetail;
 
     //IN ADD PROPERTY PAGE
 

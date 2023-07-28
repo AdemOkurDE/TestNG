@@ -7,7 +7,7 @@ import utilities.Driver;
 
 public class AdminDashboard {
     // -Firdevs hanim -Metin -Yusuf bey -Enver Bey
-    AdminDashboard(){
+    public AdminDashboard(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
