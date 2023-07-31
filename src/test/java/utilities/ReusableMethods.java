@@ -2,17 +2,17 @@
 package utilities;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.function.Function;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ReusableMethods {
 
@@ -144,5 +144,58 @@ public class ReusableMethods {
         });
 
         return element;
+    }
+    public static void wait(int secs) {
+
+        try {
+            Thread.sleep(1000 * secs);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (TimeoutException e) {
+            e.printStackTrace();
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+        } catch (StaleElementReferenceException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public static boolean stringRakamIceriyorMu(String str) {
+        Pattern pattern = Pattern.compile("\\d");
+        Matcher matcher = pattern.matcher(str);
+        return matcher.find(); // Eşleşme bulunursa true döner, aksi halde false.
+    }
+    public static Boolean linkCheck(WebElement element,String linkContainText,String mainWHD){
+        // Bu methoda uc veri gonderilir:
+        // 1- link barindiran ve tiklandiginda yeni bir sayfada linkini acan Web Elementi ==>> (Web Element - element)
+        // 2- Link acildiginda url de var oldugu konrol edilmek istenen Text ==>> (String linkContainText)
+        // 3- Link kontrol edilip kapatildiginda, gidilecek olan onceki sayfa Handle degeri ==>>  (String mainWHD)
+        // Bu veriler girildiginde method ilgili linke tiklar, url verilen texti iceriyormu kontrol eder ve Boolean olarak bize dondürür
+        // ve acilan yeni sayfa kapatilarak onceki safaya donulur.. selamlar Adm...
+
+        Boolean isLinkContainTheText=false;
+        String newWHD="";
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) Driver.getDriver();
+
+        jsExecutor.executeScript("arguments[0].click();",element);
+        ReusableMethods.wait(1);
+        Set<String> WHD=Driver.getDriver().getWindowHandles();
+        newWHD="";
+        for (String each:WHD
+        ) {
+            if (!each.equals(mainWHD)){
+                newWHD=each;
+                WHD.remove(each);
+                break;
+            }
+        }
+        //ReusableMethods.wait(1);
+        Driver.getDriver().switchTo().window(newWHD);
+        isLinkContainTheText=Driver.getDriver().getCurrentUrl().contains(linkContainText);
+        Driver.getDriver().close();
+        Driver.getDriver().switchTo().window(mainWHD);
+
+        return isLinkContainTheText;
     }
 }

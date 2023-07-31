@@ -27,9 +27,9 @@ public class US18_TC001_Adm {
         }
 
     //Enter the valid username and userpassword and click the login button.
-        visitorPage.usernameTextbox.sendKeys(ConfigReader.getProperty("userName"));
-        visitorPage.passwordTextbox.sendKeys(ConfigReader.getProperty("userPassword"));
-        visitorPage.loginButonu.click();
+        userPage.textBoxEmailUserName.sendKeys(ConfigReader.getProperty("userName"));
+        userPage.textBoxPassword.sendKeys(ConfigReader.getProperty("userPassword"));
+        userPage.loginButton.click();
 
     //The registered username is displayed
         Assert.assertTrue(userPage.headerUserName.isDisplayed());
@@ -41,7 +41,9 @@ public class US18_TC001_Adm {
         //userPage.searchResult.click();
 
     //Verify that the result text is displayed
-        Assert.assertTrue(userPage.foundResults.isDisplayed());
+
+        Assert.assertTrue(userPage.foundResults.getText().contains("Found"));
+        System.out.println(userPage.foundResults.getText());
         ReusableMethods.bekle(2);
     //page is closed
         Driver.closeDriver();

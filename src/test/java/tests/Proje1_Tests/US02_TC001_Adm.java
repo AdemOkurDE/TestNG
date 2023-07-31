@@ -1,5 +1,7 @@
 package tests.Proje1_Tests;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.UserHomepage;
@@ -11,50 +13,91 @@ public class US02_TC001_Adm {
 
     @Test
     public void visitorHomepageHeaderMenuVerifyTest(){
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) Driver.getDriver();
+        Actions actions =new Actions(Driver.getDriver());
 
         //go to qa.hauseheaven.com page
 
         Driver.getDriver().get(ConfigReader.getProperty("userUrl"));
         UserHomepage visitorPage= new UserHomepage();
 
+        if (visitorPage.copyrightInFooter.isDisplayed()){
+            visitorPage.cookiesAllowButton.click();
+        }
+
         //Located in the header section;
         //Home, Listing, Projects, Agents, Blog, Contact, Sign Up menus are "visible".
         //Home, Listing, Projects, Agents, Blog, Contact, Sign Up menus are "active".
 
+        // Logo link Visibility and is link active Check
         Assert.assertTrue(visitorPage.logoHome.isDisplayed());
-        Assert.assertTrue(visitorPage.logoHome.isEnabled());
+        jsExecutor.executeScript("arguments[0].click();",visitorPage.logoHome);
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("https://qa.hauseheaven.com"));
 
+        // Home link Visibility and is link active Check
         Assert.assertTrue(visitorPage.linkMenuHome.isDisplayed());
-        Assert.assertTrue(visitorPage.linkMenuHome.isEnabled());
+        actions.moveToElement(visitorPage.linkMenuHome).build().perform();
+        visitorPage.linkMenuHome.click();
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("https://qa.hauseheaven.com"));
 
+        // Listing link Visibility and is link active Check
         Assert.assertTrue(visitorPage.linkMenuListing.isDisplayed());
-        Assert.assertTrue(visitorPage.linkMenuListing.isEnabled());
+        //jsExecutor.executeScript("arguments[0].click();",visitorPage.linkMenuListing);
+        actions.moveToElement(visitorPage.linkMenuListing).build().perform();
+        visitorPage.linkMenuListing.click();
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("properties"));
 
+        // Projects link Visibility and is link active Check
         Assert.assertTrue(visitorPage.linkMenuProjects.isDisplayed());
-        Assert.assertTrue(visitorPage.linkMenuProjects.isEnabled());
+        actions.moveToElement(visitorPage.linkMenuProjects).build().perform();
+        visitorPage.linkMenuProjects.click();
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("projects"));
 
+        // Agents link Visibility and is link active Check
         Assert.assertTrue(visitorPage.linkMenuAgents.isDisplayed());
-        Assert.assertTrue(visitorPage.linkMenuAgents.isEnabled());
+        actions.moveToElement(visitorPage.linkMenuAgents).build().perform();
+        visitorPage.linkMenuAgents.click();
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("agents"));
 
+        // Blog link Visibility and is link active Check
         Assert.assertTrue(visitorPage.linkMenuBlog.isDisplayed());
-        Assert.assertTrue(visitorPage.linkMenuBlog.isEnabled());
+        actions.moveToElement(visitorPage.linkMenuBlog).build().perform();
+        visitorPage.linkMenuBlog.click();
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("blog"));
 
+        // Contact link Visibility and is link active Check
         Assert.assertTrue(visitorPage.linkMenuContact.isDisplayed());
-        Assert.assertTrue(visitorPage.linkMenuContact.isEnabled());
+        actions.moveToElement(visitorPage.linkMenuContact).build().perform();
+        visitorPage.linkMenuContact.click();
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("contact"));
 
+        // SingUp link Visibility and is link active Check
         Assert.assertTrue(visitorPage.linkMenuSingUp.isDisplayed());
-        Assert.assertTrue(visitorPage.linkMenuSingUp.isEnabled());
+        actions.moveToElement(visitorPage.linkMenuSingUp).build().perform();
+        visitorPage.linkMenuSingUp.click();
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("login"));
 
+        // AddProperty link Visibility and is link active Check
         Assert.assertTrue(visitorPage.linkAddProperty.isDisplayed());
-        Assert.assertTrue(visitorPage.linkAddProperty.isEnabled());
+        actions.moveToElement(visitorPage.linkAddProperty).build().perform();
+        visitorPage.linkAddProperty.click();
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("login"));
 
+        // SignIn link Visibility and is link active Check
         Assert.assertTrue(visitorPage.linkSignIn.isDisplayed());
-        Assert.assertTrue(visitorPage.linkSignIn.isEnabled());
+        actions.moveToElement(visitorPage.linkSignIn).build().perform();
+        visitorPage.linkSignIn.click();
+        jsExecutor.executeScript("arguments[0].click();",visitorPage.linkSignIn);
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("login"));
 
+        ReusableMethods.wait(1);
+        // Wishlist link Visibility and is link active Check
         Assert.assertTrue(visitorPage.linkWishlist.isDisplayed());
-        Assert.assertTrue(visitorPage.linkWishlist.isEnabled());
+        jsExecutor.executeScript("arguments[0].click();",visitorPage.linkWishlist);
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("wishlist"));
+        ReusableMethods.wait(1);
 
-        //The page is closed
+        // Close the page
         Driver.closeDriver();
 
     }

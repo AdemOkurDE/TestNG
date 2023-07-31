@@ -6,12 +6,21 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class UserDashboard {
+
+
     //-Elif - -Suleyman
     public UserDashboard(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+    //==============================Veysel new Locate========
 
+    @FindBy(xpath = "//button[@class='btn btn-md full-width btn-theme-light-2 rounded']")
+    public WebElement clickSignUpLogin;
 
+    @FindBy(xpath = "//*[text()='+4912345678']")
+    public WebElement settingsRegisteredVisible;
+
+    //=======================================================
 
     //HEADER LOCATES ON USER DASHBOARD
     @FindBy(xpath = "//a[@href='https://qa.hauseheaven.com']")
@@ -31,14 +40,45 @@ public class UserDashboard {
     public WebElement clickOnSignup;
     @FindBy(xpath = "//a[text()=' Add Property']")
     public WebElement addProperty;
+    //User Dashoard/Properties/All Table For Property
     @FindBy(xpath = "//table[@id='botble-real-estate-tables-account-property-table']")
     public WebElement registeredPropertyVisible;
     @FindBy(xpath = "//i[@class='fas fa-user']")
     public WebElement headerUserName;
+
+    @FindBy(xpath = "//a[text()='Sign In']")
+    public WebElement headerSignIn;
+    @FindBy(xpath = "//input[@placeholder='Email/Username']")
+    public WebElement nameUsername;
+    @FindBy(xpath = "//input[@placeholder='Password']")
+    public WebElement password;
+    @FindBy(xpath = "(//button[@type='submit'])[1]")
+    public WebElement login;
+    @FindBy(xpath = "//*[@class='fas fa-sign-out-alt']")
+    public WebElement logOut;
+    @FindBy(xpath = "//*[text()='These credentials do not match our records.']")
+    public WebElement invalidLoginText;
+
     @FindBy(xpath = "//*[@class='current-menu-item']")
     public WebElement userDashboardLogOut;
+
+
+
+    @FindBy(xpath = "//*[@class='fas fa-sign-out-alt']")
+    public WebElement headerLogOutButton;
+
+
+    //   @FindBy(xpath = "//*[text()='Logout']")
+    // public WebElement userDashboardLogOut;
+    //Locater of log out on dashboard wasn't work // ask ?
+
+    @FindBy(xpath = "//*[@class='btn-logout']")
+    public WebElement userDashboardLogOut2;
+
+
     @FindBy(xpath = "(//a[text()=' Wishlist('])[1]")
     public WebElement wishList;
+
 
 
 
@@ -56,7 +96,7 @@ public class UserDashboard {
     public WebElement propertyType;
     @FindBy(xpath = "//span[@id='select2-select-bedroom-container']")
     public WebElement bedRooms;
-    @FindBy(xpath = "//span[@id='select2-city_id-container']")
+    @FindBy(xpath = "//input[@id='location']")
     public WebElement propertyLocation;
     @FindBy(xpath = "//button[text()='Search Result']")
     public WebElement searchResult;
@@ -114,7 +154,7 @@ public class UserDashboard {
     public WebElement recentlyViewedPropertiesVisibleTest;
     @FindBy(xpath = "//div[@class='call-to-act-head']")
     public WebElement wantToBecameEstateAgentVisibleTest;
-    @FindBy(xpath = "//a[text()='Sign Up Today']")
+    @FindBy(xpath = "//a[@href='/register']")
     public WebElement signUpToday;
     @FindBy(xpath = "//h4[@class='m-0']")
     public WebElement foundResults;
@@ -243,25 +283,6 @@ public class UserDashboard {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //USER DASHBOARD MAIN
     @FindBy(tagName = "(//h4)[3]")
     public WebElement currentCreditsText;
@@ -313,7 +334,7 @@ public class UserDashboard {
     public WebElement genderText;
     @FindBy(xpath = "//select[@id='gender']")
     public WebElement selectGender;
-    @FindBy(xpath = "(//button[text()='Save'])[1]")
+    @FindBy(xpath = "(//button[@name='submit'])[2]")
     public WebElement saveButton;
 
 
@@ -343,17 +364,17 @@ public class UserDashboard {
     //USER DASHBOARD BUY CREDITS
     @FindBy(xpath = "(//div[@class='container-fluid'])[1]")
     public WebElement buyCreditsPageVisible;
-    @FindBy(xpath = "( //h4[@class='with-actions'])[1] ")
+    @FindBy(xpath = "( //h4[@class='with-actions'])[1]")
     public WebElement packagesText;
     @FindBy(xpath = "//div[@class='alert alert-info current-package']")
     public WebElement yourCreditsText;
-    @FindBy(xpath = "(//div[@class='card-block'])[1] ")
+    @FindBy(xpath = "(//div[@class='card-block'])[1]")
     public WebElement Post1Text;
-    @FindBy(xpath = "(//button[text()='Purchase'])[1] ")
+    @FindBy(xpath = "(//button[text()='Purchase'])[1]")
     public WebElement purchaseButton1;
-    @FindBy(xpath = "(//div[@class='card-block'])[2] ")
+    @FindBy(xpath = "(//div[@class='card-block'])[2]")
     public WebElement Post2Text;
-    @FindBy(xpath = "(//button[text()='Purchase'])[2] ")
+    @FindBy(xpath = "(//button[text()='Purchase'])[2]")
     public WebElement purchaseButton2;
     @FindBy(xpath =  "//li[@class='list-group-item']")
     public WebElement payOnlineViaStripe;
@@ -371,7 +392,7 @@ public class UserDashboard {
     public WebElement cVC;
     @FindBy(xpath = "//button[text()='Checkout']")
     public WebElement checkOut;
-    @FindBy(xpath = "(//h4[@class='with-actions'])[2] ")
+    @FindBy(xpath = "(//h4[@class='with-actions'])[2]")
     public WebElement transactionsText;
     @FindBy(xpath = "(//div[@class='main-dashboard-form'])[2]")
     public WebElement transactionsDetails;
@@ -450,7 +471,7 @@ public class UserDashboard {
     public WebElement imagesUpload;
     @FindBy(xpath = "//label[@for='city_id']")
     public WebElement cityText;
-    @FindBy(xpath = "//span[@id='select2-city_id-container']")
+    @FindBy(xpath = "//*[@id='city_id']")
     public WebElement citySelect;
     @FindBy(xpath = "//label[@for='location']")
     public WebElement propertyLocationText;
@@ -504,7 +525,7 @@ public class UserDashboard {
     public WebElement distanceKeyText;
     @FindBy(xpath = "//select[@class='ui-select']")
     public WebElement selectFacility;
-    @FindBy(xpath = "(//input[@class='form-control'])[12]")
+    @FindBy(xpath = "//input[@placeholder='Distance (Km)']")
     public WebElement distanceInput;
     @FindBy(xpath = "(//*[@class='fa fa-times'])[1]")
     public WebElement xButton;
@@ -614,7 +635,7 @@ public class UserDashboard {
     public WebElement eighthProject;
     @FindBy(xpath = "(//a[@class='prt-link-detail text-uppercase'])[9]")
     public WebElement ninthProject;
-    @FindBy(xpath = "//span[text()='Country']")
+    @FindBy(xpath = "//select[@name='country_id']")
     public WebElement countryOnProjects;
     @FindBy(xpath = " //*[@id='select2-filter_country_id-result-z2st-1']")
     public WebElement firstCountrySelect;
@@ -622,14 +643,52 @@ public class UserDashboard {
     public WebElement loginVisibleTest;
     @FindBy(xpath = "//i[@class='fas fa-user']")
     public WebElement userNameVisibleTest;
-    @FindBy(xpath = "//span[@title='State']")
+    @FindBy(xpath = "(//*[@rel='nofollow'])[1]")
+    public WebElement labelUserName;
+    @FindBy(xpath = "//select[@name='state_id']")
     public WebElement stateOnProjects;
-    @FindBy(xpath = "//span[@title='City']")
+    @FindBy(xpath = "//select[@name='city_id']")
     public WebElement cityOnProjects;
-    @FindBy(xpath = "//span[text()='Category']")
+    @FindBy(xpath = "//select[@name='category_id']")
     public WebElement categoryOnProjects;
     @FindBy(xpath = "//button[text()='Search']")
     public WebElement searchOnProjects;
+    @FindBy(xpath = "//button[@class='js-cookie-consent-agree cookie-consent__agree']")
+    public WebElement allowCookiesButton;
+    @FindBy(xpath = "//a[text()='For Sale']")
+    public WebElement firstAgentForSaleButton;
+    @FindBy(xpath = "(//div[@class='property-listing property-2 '])[1]")
+    public WebElement firstAgentForSaleAd;
+    @FindBy(xpath = "//img[@class='img-fluid mx-auto lazy entered loaded']")
+    public WebElement firstAgentViewButton;
+    @FindBy(xpath = "(//i[@class='ti-facebook'])[1]")
+    public WebElement firstAgentPageFacebook;
+    @FindBy(xpath = "(//i[@class='ti-twitter'])[1]")
+    public WebElement firstAgentPageTwitter;
+    @FindBy(xpath = "(//i[@class='ti-linkedin'])[1]")
+    public WebElement firstAgentPageLinkedin;
+    @FindBy(xpath = "//a[text()='For Rent']")
+    public WebElement firstAgentForRentButton;
+    @FindBy(xpath = "(//div[@class='property-listing property-2 '])[2]")
+    public WebElement firstAgentFirstAdRentalVisible;
+    @FindBy(xpath = "(//img[@class='img-fluid mx-auto lazy entered loaded'])[2]")
+    public WebElement firstAgentFirstRentalAddClick;
+    @FindBy(xpath = "//div[@class='prt-detail-title-desc']")
+    public WebElement firstAgentForSaleAdInfo;
+    @FindBy(xpath = "(//div[@class='property-listing property-2 '])[3]")
+    public WebElement firstAgentSecondAdRentalVisible;
+    @FindBy(xpath = "(//img[@class='img-fluid mx-auto lazy entered loaded'])[3]")
+    public WebElement firstAgentSecondRentalAdClick;
+    @FindBy(xpath = "//div[@class='prt-detail-title-desc']")
+    public WebElement firstAgentForRentInfo;
+
+
+
+
+
+
+
+
 
 
 
@@ -637,7 +696,7 @@ public class UserDashboard {
 
 
     //BLOG PAGE
-    @FindBy(xpath = "(//a[@class='bl-continue'])[1]")
+    //@FindBy(xpath = "(//a[@class='bl-continue'])[1]")
     public WebElement continue1;
     @FindBy(xpath = "(//a[@class='bl-continue'])[2]")
     public WebElement continue2;
@@ -677,7 +736,7 @@ public class UserDashboard {
 
 
 
-    //    US20
+
     //    Kayıtlı kullanıcı olarak sitedeki mülklerin listelendiği list sayfasına ulaşabildiğimi,
     @FindBy(xpath = "//h1[text()='Properties']")
     public WebElement PropertiesText;
@@ -690,13 +749,10 @@ public class UserDashboard {
     @FindBy(xpath ="(//a[@class='prt-view'])[1]")
     public WebElement PropertyViewButton;
 
-    //    çıkan sonuçların ayrıntılarına ulaşılabildiğini doğrulayabilmeliyim
 
 
-    // US21
-    // Kayıtlı kullanıcı olarak sitedeki mülklerin bilgi ayrıntılarına ulaşıp
-    //    @FindBy(xpath ="(//a[@class='prt-view'])[1]")
-    //    public WebElement PropertyViewButton;
+
+
 
     // ilgili ilanın sosyal medyada paylaşılabilir durumda olduğunu,
 
@@ -725,7 +781,7 @@ public class UserDashboard {
     @FindBy(xpath = "//button[@class='btn btn-theme-light-2 rounded']")
     public WebElement submitReviewButton;
 
-    // US23
+
     // Kayıtlı kullanıcı olarak siteye kayıtlı emlakçıların listelendiği agents sayfasına ulaşılabildiğini,
 
     @FindBy(xpath = "//h1[@class='ipt-title']")
@@ -744,7 +800,185 @@ public class UserDashboard {
     @FindBy(xpath = "(//div[@class='fr-grid-info'])[1]")
     public WebElement agentPhoneAndEmail;
 
+    @FindBy(xpath = "(//span[@class='fr-position'])[1]")
+    public WebElement numberOfRegisteredProperties1;
+    @FindBy(xpath = "(//span[@class='fr-position'])[2]")
+    public WebElement numberOfRegisteredProperties2;
+    @FindBy(xpath = "(//span[@class='fr-position'])[3]")
+    public WebElement numberOfRegisteredProperties3;
+    @FindBy(xpath = "(//span[@class='fr-position'])[4]")
+    public WebElement numberOfRegisteredProperties4;
+    @FindBy(xpath = "(//span[@class='fr-position'])[5]")
+    public WebElement numberOfRegisteredProperties5;
+    @FindBy(xpath = "(//span[@class='fr-position'])[6]")
+    public WebElement numberOfRegisteredProperties6;
+    @FindBy(xpath = "(//span[@class='fr-position'])[7]")
+    public WebElement numberOfRegisteredProperties7;
+    @FindBy(xpath = "(//span[@class='fr-position'])[8]")
+    public WebElement numberOfRegisteredProperties8;
+    @FindBy(xpath = "(//span[@class='fr-position'])[9]")
+    public WebElement numberOfRegisteredProperties9;
+    @FindBy(xpath = "(//span[@class='fr-position'])[10]")
+    public WebElement numberOfRegisteredProperties10;
+    @FindBy(xpath = "(//span[@class='fr-position'])[11]")
+    public WebElement numberOfRegisteredProperties11;
+    @FindBy(xpath = "(//span[@class='fr-position'])[12]")
+    public WebElement numberOfRegisteredProperties12;
+    @FindBy(xpath = "(//img[@class='img-fluid mx-auto'])[1]")
+    public WebElement agentsView1;
+    @FindBy(xpath = "(//img[@class='img-fluid mx-auto'])[2]")
+    public WebElement agentsView2;
+    @FindBy(xpath = "(//img[@class='img-fluid mx-auto'])[3]")
+    public WebElement agentsView3;
+    @FindBy(xpath = "(//img[@class='img-fluid mx-auto'])[4]")
+    public WebElement agentsView4;
+    @FindBy(xpath = "(//img[@class='img-fluid mx-auto'])[5]")
+    public WebElement agentsView5;
+    @FindBy(xpath = "(//img[@class='img-fluid mx-auto'])[6]")
+    public WebElement agentsView6;
+    @FindBy(xpath = "(//img[@class='img-fluid mx-auto'])[7]")
+    public WebElement agentsView7;
+    @FindBy(xpath = "(//img[@class='img-fluid mx-auto'])[8]")
+    public WebElement agentsView8;
+    @FindBy(xpath = "(//img[@class='img-fluid mx-auto'])[9]")
+    public WebElement agentsView9;
+    @FindBy(xpath = "(//img[@class='img-fluid mx-auto'])[10]")
+    public WebElement agentsView10;
+    @FindBy(xpath = "(//img[@class='img-fluid mx-auto'])[11]")
+    public WebElement agentsView11;
+    @FindBy(xpath = "(//img[@class='img-fluid mx-auto'])[12]")
+    public WebElement agentsView12;
+    @FindBy(xpath = "(//i[@class='ti-email'])[1]")
+    public WebElement eachAgentMailBox1;
+    @FindBy(xpath = "(//i[@class='ti-email'])[2]")
+    public WebElement eachAgentMailBox2;
+    @FindBy(xpath = "(//i[@class='ti-email'])[3]")
+    public WebElement eachAgentMailBox3;
+    @FindBy(xpath = "(//i[@class='ti-email'])[4]")
+    public WebElement eachAgentMailBox4;
+    @FindBy(xpath = "(//i[@class='ti-email'])[5]")
+    public WebElement eachAgentMailBox5;
+    @FindBy(xpath = "(//i[@class='ti-email'])[6]")
+    public WebElement eachAgentMailBox6;
+    @FindBy(xpath = "(//i[@class='ti-email'])[7]")
+    public WebElement eachAgentMailBox7;
+    @FindBy(xpath = "(//i[@class='ti-email'])[8]")
+    public WebElement eachAgentMailBox8;
+    @FindBy(xpath = "(//i[@class='ti-email'])[9]")
+    public WebElement eachAgentMailBox9;
+    @FindBy(xpath = "(//i[@class='ti-email'])[10]")
+    public WebElement eachAgentMailBox10;
+    @FindBy(xpath = "(//i[@class='ti-email'])[11]")
+    public WebElement eachAgentMailBox11;
+    @FindBy(xpath = "(//i[@class='ti-email'])[12]")
+    public WebElement eachAgentMailBox12;
 
+
+
+
+
+
+    //Log in page
+
+    @FindBy(xpath = "(//*[text()='Login'])[2]")
+    public WebElement labelLogin;
+
+    @FindBy(xpath = "//*[@placeholder='Email/Username']")
+    public WebElement textBoxEmailUserName;
+
+    @FindBy(xpath = "//*[@placeholder='Password']")
+    public WebElement textBoxPassword;
+
+    @FindBy(xpath = "//*[@class='btn btn-md full-width btn-theme-light-2 rounded']")
+    public WebElement loginButton;
+    @FindBy(xpath = "//*[@class='form-group text-center']")
+    public WebElement labelDontYouHaveAnAccountText;
+
+    @FindBy(xpath = "//*[@href='https://qa.hauseheaven.com/register']")
+    public WebElement labelRegisterButton;
+
+    //Register page
+
+    @FindBy(xpath = "(//*[text()='Register'])[2]")
+    public WebElement labelRegister;
+
+    @FindBy(xpath = "//*[@placeholder='First name']")
+    public WebElement textBoxFirstName;
+
+    @FindBy(xpath = "//*[@placeholder='Last name']")
+    public WebElement textBoxLastName;
+
+    @FindBy(xpath = "//*[@placeholder='Email']")
+    public WebElement textBoxEmail;
+
+    @FindBy(xpath = "//*[@placeholder='Username']")
+    public WebElement textBoxUserName;
+
+    @FindBy(xpath = "//*[@placeholder='Password']")
+    public WebElement textBoxRegisterationPassword;
+
+    @FindBy(xpath = "//*[@placeholder='Confirm Password']")
+    public WebElement textBoxConfirmRegisterationPassword;
+
+    @FindBy(xpath = "//*[@class='btn btn-md full-width btn-theme-light-2 rounded']")
+    public WebElement registerButton;
+
+    //*[@class='float-end btn btn-danger delete-crud-entry']  //Firdevs
+    @FindBy(xpath = "//*[@class='float-end btn btn-danger delete-crud-entry']")
+    public WebElement buttonDeleteConfirm;
+
+    public WebElement labelSuccessfullyMessage;
+
+
+
+    //===================metin's locators start
+    //alert message from add property click
+    @FindBy(xpath = "//*[@class='alert alert-danger alert-dismissible']")
+    public WebElement labelAlertMessageForCredit;
+    @FindBy(xpath = "//div[@id='multiple-upload']")
+    public WebElement dropImagesInWriteProperty;
+
+    //https://www.latlong.net/convert-address-to-lat-long.html locators
+    @FindBy(xpath = "//*[@id='onetrust-accept-btn-handler']")
+    public WebElement cookiesAcceptButtonInLatlong;
+
+    @FindBy(xpath = "//*[@placeholder='Type address here to get lat long']")
+    public WebElement textBoxGetLanLong;
+
+    @FindBy(xpath = "//*[@id='btnfind']")
+    public WebElement getLanLongFindButton;
+
+
+    @FindBy(xpath = "//*[@class='leaflet-popup-content']")
+    public WebElement labelLanLongValue;
+
+    @FindBy(xpath = "//*[@id='category_id']")
+    public WebElement dropDownCategoryinWriteProperty;
+
+
+    @FindBy(xpath = "//*[text()='Sorry, You have reached your daily query limit.']")
+    public WebElement labelDailyQueryLimit;
+
+
+    @FindBy(xpath = "//*[@href='/user/login']")
+    public WebElement longLatQueryPageSigninButton;
+
+    @FindBy(xpath = "//*[@name='email']")
+    public WebElement textBoxLongLatQueryPageEmail;
+
+    @FindBy(xpath = "//*[@name='password1']")
+    public WebElement textBoxLongLatQueryPagePassword;
+
+    @FindBy(xpath = "//*[@title='Login']")
+    public WebElement longLatQueryPageLogginButton;
+
+    @FindBy(xpath = "//*[@title='Back to top']")
+    public WebElement backToTop;
+
+    @FindBy(xpath = "//*[@class='alert alert-success alert-dismissible']")
+    public WebElement labelUpdatedSuccessfully;
+
+    //=================== metin's locaters finish
 
 
 

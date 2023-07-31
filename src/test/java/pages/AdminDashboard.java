@@ -668,13 +668,228 @@ public class AdminDashboard {
 
 
 
+    // ==================metin's locators start
+
+    @FindBy(xpath = "(//*[@class='js-rv-media-change-filter'])[9]")
+    public WebElement dropDownModerationStatus;
+
+    @FindBy(xpath = "//*[@class='dropdown dropdown-user']")
+    public WebElement adminUserButtonOnHeader;
+
+
+    //===================metin's locators finsih
+
+    //=======yusuf===========
+
+    // admin dahsboard creat button
+    @FindBy(xpath = "(//span[@class='onoffswitch-switch'])[1]")
+    public WebElement IsfeaturedButton;
+
+
+    // admin dahsboard creat button
+    //@FindBy(xpath = "//button[@class='btn btn-secondary']")
+    //public WebElement IsfeaturedButton; // us_37 kullanacagim
+
+
+    // admin dahsboard button icinde properties yazi
+    @FindBy(xpath = "(//*[@class='breadcrumb-item active'])[2]")
+    public WebElement propertiesYaizisiButton;
+
+
+    // dahsboard yazisi
+    @FindBy(xpath = "//*[@class='breadcrumb-item active']")
+    public WebElement dahsboardYazisiYusuf;
+
+
+    // real estate altinda categories icindeki id categori
+    @FindBy(xpath = "//*[@title='ID']")
+    public WebElement idCategoryYusuf;
+
+    // real estate altinda categories icindeki name categori
+    @FindBy(xpath = "//*[@title='Name']")
+    public WebElement nameCategoryYusuf;
+
+
+    // real estate altinda categories icindeki parent categori
+    @FindBy(xpath = "//*[@title='Parent']")
+    public WebElement parentCategoryYusuf;
+
+    // real estate altinda categories icindeki Created At categori
+    @FindBy(xpath = "//*[@title='Created At']")
+    public WebElement createdAtCategoryYusuf;
+
+    // real estate altinda categories icindeki Status categori
+    @FindBy(xpath = "//*[@title='Status']")
+    public WebElement statusCategoryYusuf;
+
+    // real estate altinda categories icindeki Operations categori
+    @FindBy(xpath = "//*[@title='Operations']")
+    public WebElement operationsCategoryYusuf;
+
+
+    // real estate altinda categories icindeki cateories sonuclar
+    @FindBy(xpath = "//span[@class='dt-length-records']")
+    public WebElement categoriesResultYusuf;
+
+    // creat icindeki New category yazisi
+    @FindBy(xpath = "//*[@class='breadcrumb-item active'][2]")
+    public WebElement newCategoryYazisiYusuf;
+
+    // real estate altinda categories icinde reload
+    @FindBy(xpath = "//button[@class='btn btn-secondary buttons-reload']")
+    public WebElement reloadButtonYusuf;
+
+
+    // new categories creat name
+    @FindBy(xpath = "//input[@placeholder='Name']")
+    public WebElement nameTexyBoxYusuf;
+
+
+    // new categories creat Is default
+    @FindBy(xpath = "//*[@class='onoffswitch-label']")
+    public WebElement isdefaultYusuf;
+
+    // new categories creat status
+    @FindBy(xpath = "//select[@name='status']")
+
+    public WebElement statusSelectPendingYusuf;
+
+
+    // kayit islemini  silme tusu tikla
+    @FindBy(xpath = "//select[@name='//*[@class='btn btn-icon btn-sm btn-danger deleteDialog']']")
+    public WebElement deleteButtonYusuf;
 
 
 
+    // Admin Blog Categories menu link Latest News - Firdevs
+
+    @FindBy(xpath = "//a[@class='fetch-data category-name active']")
+    public WebElement linkBlogCategoriesLatestNews;
 
 
+    //Admin Blog Categories Save&Exit Button - Firdevs
+    @FindBy(xpath = "(//*[@class='btn btn-info'])[1]")
+    public WebElement linkBlogCategoriesSaveExitButton;
 
 
+    // Admin Blog Categories Name - Firdevs
+    @FindBy(xpath = "//input[@id='name']")
+    public WebElement blogCategoriesWriteName;
+
+    // Admin Blog Categories Parent - Firdevs
+    @FindBy(xpath = "//*[@id='select2-parent_id-container']")
+    public WebElement blogCategoriesWriteParent;
+
+
+    // Admin Blog Categories Description - Firdevs
+    @FindBy(xpath ="//*[@id='description']")
+    public WebElement blogCategorieswriteDescription;
+
+    // Admin Blog Categories Published Button - Firdevs
+    @FindBy(xpath = "//*[@class='form-control ui-select ui-select']")
+    public  WebElement blogCategoriesPublishedButton;
+
+    // Blog Create link--Firdevs
+    @FindBy (xpath = "//a[@href='https://qa.hauseheaven.com/admin/blog/categories/create']")
+    public WebElement buttonBlogCategoriesCreate;
+
+    // Blog categories add dropdown menu select -- Firdevs
+    @FindBy (xpath = "//select[@name='parent_id']")
+    public WebElement dropdownSelectionBlogCategories;
+
+    // Blog categories Collapse All Button -- Firdevs
+    @FindBy (xpath = "(//button[@type='button'])[1]")
+    public WebElement buttonBlogCollapseAll;
+
+
+    // Dashboard Packages Link Button -- Firdevs
+    @FindBy(xpath ="(//*[@class='nav-link nav-toggle'])[8]")
+    public WebElement dashboardPackageslinkButton;
+
+
+    // Dashboard Packages Link Goruntulenen ilk Element -- Firdevs
+    @FindBy(xpath = "//*[@class='text-start column-key-name sorting_1'])[1]")
+    public WebElement dashboardPackagesIlkElement;
+
+
+    // kayit islemini  silme onayla
+    @FindBy(xpath = "//button[@class='float-end btn btn-danger delete-crud-entry']")
+    public WebElement deleteConfirmButtonYusuf;
+
+    //================elif=================
+
+    @FindBy(xpath = "//(//a[@class='btn btn-icon btn-sm btn-primary'])[1]")
+    public WebElement editButtonElif;
+    @FindBy(xpath = "//span[@class='username d-none d-sm-inline']")
+    public WebElement adminUserNameAdminHeader;
+    @FindBy(xpath = "//input[@value='5']")
+    public WebElement tagsRadioButton;
+    @FindBy(xpath = "(//button[text()='Delete'])[1]")
+    public WebElement confirmDeleteButtonElif;
+    @FindBy(xpath = "//*[@class='login-form']")
+    public WebElement adminLoginBox;
+    @FindBy(xpath = "//table[@id='botble-blog-tables-tag-table']")
+    public WebElement adminTagsWebTable;
+    @FindBy(xpath = "//span[@class='dt-length-records']")
+    public WebElement numberOfStatesRecord;
+    @FindBy(xpath = "//*[@class='fa fa-plus']")
+    public WebElement locationsStatesCreateButton;
+    @FindBy(xpath = "//input[@id='name']")
+    public WebElement locationsStatesCreateNameInput;
+    @FindBy(xpath = "//input[@id='abbreviation']")
+    public WebElement locationsStatesCreateAbbrInput;
+    @FindBy(xpath = "//select[@name='country_id']")
+    public WebElement locationsStatesSelectCountry;
+    @FindBy(xpath = "//input[@id='order']")
+    public WebElement locationStatesOrder;
+    @FindBy(xpath = "(//*[@class='fa fa-save'])[1]")
+    public WebElement locationsStatesSaveAndExit;
+    @FindBy(xpath = "//span[@id='order-error']")
+    public WebElement orderError;
+
+    //Newsletter menu Records view select for list --- Adem
+    @FindBy(xpath = "//select[@name='botble-newsletter-tables-newsletter-table_length']")
+    public WebElement selectOptionsNewsletter;
+
+    //Real Estate Types menu first record checkbox --- Adem
+    @FindBy(xpath = "(//*[@type='checkbox'])[2]")
+    public  WebElement checkboxAdminRealEstateTypesFirstSelect;
+
+    //Real Estate Types menu first record name --- Adem
+    @FindBy(xpath = "( //td[@class=' text-start column-key-name'])[1]")
+    public  WebElement textAdminRealEstateTypesFirstSelect;
+
+    //Real Estate Types Create menu - Code textbox --- Adem
+    @FindBy(xpath = "//*[@placeholder='Code']")
+    public WebElement textBoxCategoryCode;
+
+    //Real Estate Types Create menu - Slug textbox --- Adem
+    @FindBy(xpath = "//*[@id='slug']")
+    public WebElement textBoxCategorySlug;
+
+    //Real Estate Types Create menu - Order by textbox --- Adem
+    @FindBy(xpath = "//*[@placeholder='Order by']")
+    public WebElement textBoxCategoryOrderBy;
+
+    //Real Estate Types Rename menu - Value textbox --- Adem
+    @FindBy(xpath = "//*[@placeholder='Value']")
+    public WebElement textBoxCategoryValue;
+
+    //Real Estate Types Delete confirm button in check box --- Adem
+    @FindBy(xpath = "//*[@class='float-end btn btn-danger delete-many-entry-button']")
+    public WebElement buttonDeleteConfirmWithCheckBox;
+
+    //Real Estate Types Delete confirm button in check box --- Adem
+    @FindBy(xpath = "//a[@data-key='re_property_types.name']")
+    public WebElement buttonTypesNameEditJs;
+
+    //Real Estate Types Delete confirm button in check box --- Adem
+    @FindBy(xpath = "//*[@class='btn-group']")
+    public WebElement buttonTypesBulkActionSelection;
+
+    //Real Estate Types Delete confirm button in check box --- Adem
+    @FindBy(xpath = "//button[text()='Submit']")
+    public WebElement buttonTypesNameEditSubmit;
 
 
 
